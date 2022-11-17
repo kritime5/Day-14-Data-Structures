@@ -19,14 +19,38 @@ public class LinkedList {
         }
         System.out.print("null");
     }
+    //UC4-INSERT 30 BETWEEN 56 AND 70
+    public void insertBetween(int position, int value){
+        //56-70
+        //56-30-70
+        ListNode node=new ListNode(value);
+        if(position==1){
+            node.next=head;
+            head=node;
+        }
+        else {
+            ListNode previous=head;
+            int count=1;//position-1
+            while(count<position-1){
+                previous=previous.next;
+                count++;
+            }
+            ListNode current=previous.next;
+            previous.next=node;
+            node.next=current;
+
+        }
+
+    }
+
     public static void main(String[] args) {
         LinkedList sll=new LinkedList();
-        //UC2-LINK LIST SEQUENCE 50,30,70
         sll.head=new ListNode(56);
-        ListNode second=new ListNode(30);
-        ListNode third=new ListNode(70);
+        ListNode second=new ListNode(70);
+
+        //UC3-LINK LIST NODE WITH 56 IS CREATED FIRST, NEXT APPEND 30 TO 56 AND 70 TO 30
         sll.head.next=second;
-        second.next=third;
+        sll.insertBetween(2,30);
         sll.display();
         System.out.print("Linked list program operation");
     }
