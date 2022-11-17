@@ -21,6 +21,7 @@ public class LinkedList {
     }
     public static void main(String[] args) {
         LinkedList sll=new LinkedList();
+        //UC2-LINK LIST SEQUENCE 50,30,70
         sll.head=new ListNode(56);
         ListNode second=new ListNode(30);
         ListNode third=new ListNode(70);
